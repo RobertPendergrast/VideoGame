@@ -4,17 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4743c0af-8c1a-4b56-975e-8af142a1c667" name="Changes" comment="">
+    <list default="true" id="4743c0af-8c1a-4b56-975e-8af142a1c667" name="Changes" comment="Edited TerrainGen">
+      <change afterPath="$PROJECT_DIR$/src/ImprovedNoise.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Block.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameApp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Hitbox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Hitbox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Images/Dirt.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Images/Dirt.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Images/Grass.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Images/Grass.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TerrainGen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TerrainGen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/background.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/background.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/decoration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/decoration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/particles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/particles.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,20 +31,27 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/Block.class" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2YYmBWrazO3JSf3kxrQ3HEdG36a" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "onboarding.tips.debug.path": "/Users/robertpendergrast/IdeaProjects/VideoGame/src/Main.java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/robertpendergrast/IdeaProjects/VideoGame/src/Main.java&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Images" />
@@ -81,6 +88,27 @@
       <option name="presentableId" value="Default" />
       <updated>1700702156281</updated>
     </task>
+    <task id="LOCAL-00001" summary="Edited TerrainGen">
+      <option name="closed" value="true" />
+      <created>1700707140235</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1700707140235</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Edited TerrainGen">
+      <option name="closed" value="true" />
+      <created>1700707174484</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1700707174484</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Edited TerrainGen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edited TerrainGen" />
   </component>
 </project>

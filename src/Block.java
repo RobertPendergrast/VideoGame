@@ -3,10 +3,20 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.awt.image.BufferedImage;
 
 public class Block {
-    private ImageIcon grass = new ImageIcon(getClass().getResource("/images/Grass.png"));
-    private ImageIcon dirt = new ImageIcon(getClass().getResource("/images/Dirt.png"));
+    public ImageIcon grassIcon = new ImageIcon(getClass().getResource("/images/grass.png"));
+    public ImageIcon dirtIcon = new ImageIcon(getClass().getResource("/images/dirt.png"));
+
+    public Image grassImage;
+    public Image dirtImage;
+
+    public Image scaledGrass;
+    public Image scaledDirt;
+
+    public int xPos;
+    public int yPos;
     public int x;
     public int y;
     public String id;
@@ -17,28 +27,40 @@ public class Block {
         this.y = y;
         this.id = id;
         this.size = size;
+
+        grassImage = grassIcon.getImage();
+        dirtImage = dirtIcon.getImage();
+
+        scaleImages();
+    }
+
+    public void scaleImages(){
+        scaledGrass = grassImage.getScaledInstance(size,size, Image.SCALE_DEFAULT);
+        scaledDirt = dirtImage.getScaledInstance(size,size, Image.SCALE_DEFAULT);
     }
 
     public void update(int xV, int yV){
-        x = x + xV;
-        y = y + yV;
+        xPos = x + xV;
+        yPos = y + yV;
     }
 
     public void paint(Graphics g){
         if(id.equals("grass")){
-            g.drawImage(grass.getImage(),x,y,null);
+            //scaledGrass.paintIcon(null, g, xPos, yPos);
+            g.drawImage(scaledGrass,xPos,yPos,null);
         } else if(id.equals("dirt")){
-            g.drawImage(dirt.getImage(),x,y,null);
+            g.drawImage(scaledDirt,xPos,yPos,null);
+            //scaledDirt.paintIcon(null, g, xPos, yPos);
         } else{
         }
     }
 
     public int getX(){
-        return x;
+        return xPos;
     }
 
     public int getY(){
-        return y;
+        return yPos;
     }
 
     public String getId(){
