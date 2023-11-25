@@ -5,6 +5,8 @@ Author: Robert Pendergrast
 This Video Game Engine provides the foundation for a visually appealing gaming experience that utilizes Java programming and graphics in the Swing interface. This engine features completely customizable 
 terrain generation, which is made to be realistically generated through a Perlin Noise algorithm. It is also capable of collision detection, making the terrain easy to navigate. 
 
+Also I drew all the art so if you want to hire me for art stuff instead of coding im all ears :)
+
 ## Programing
 This generation is built in Java with the Swing GUI. This was chosen as opposed to a more robust framework like JavaFx because I wanted to build this from scratch, and not rely on anyone's previous programming.
 It's far more challenging and thus far more rewarding.
