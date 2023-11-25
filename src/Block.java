@@ -22,11 +22,15 @@ public class Block {
     public String id;
     public int size;
 
+    hitbox hitbox;
+
     public Block(int x, int y, String id, int size){
         this.x = x;
         this.y = y;
         this.id = id;
         this.size = size;
+
+        hitbox = new hitbox(x,y,size);
 
         grassImage = grassIcon.getImage();
         dirtImage = dirtIcon.getImage();
@@ -40,11 +44,13 @@ public class Block {
     }
 
     public void update(int xV, int yV){
-        xPos = x + xV;
-        yPos = y + yV;
+        xPos = x - xV;
+        yPos = y -yV;
+        hitbox.update(xPos,yPos,size);
     }
 
     public void paint(Graphics g){
+
         if(id.equals("grass")){
             //scaledGrass.paintIcon(null, g, xPos, yPos);
             g.drawImage(scaledGrass,xPos,yPos,null);
@@ -55,6 +61,7 @@ public class Block {
         }
     }
 
+
     public int getX(){
         return xPos;
     }
@@ -63,7 +70,21 @@ public class Block {
         return yPos;
     }
 
+    public int getx(){
+        return x;
+    }
+
+    public int gety(){
+        return y;
+    }
+
     public String getId(){
         return id;
     }
+
+    public hitbox getHitbox(){
+        return hitbox;
+    }
+    
+    public int getSize(){return size;}
 }
