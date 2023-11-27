@@ -14,7 +14,6 @@ public class Block {
 
     public Image scaledGrass;
     public Image scaledDirt;
-
     public int xPos;
     public int yPos;
     public int x;
@@ -58,6 +57,7 @@ public class Block {
             g.drawImage(scaledDirt,xPos,yPos,null);
             //scaledDirt.paintIcon(null, g, xPos, yPos);
         } else{
+
         }
     }
 

@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4743c0af-8c1a-4b56-975e-8af142a1c667" name="Changes" comment="Finished Perlin terrain generation">
-      <change afterPath="$PROJECT_DIR$/src/hitbox.java" afterDir="false" />
+    <list default="true" id="4743c0af-8c1a-4b56-975e-8af142a1c667" name="Changes" comment="Collisions Working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Block.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameApp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Hitbox.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/background.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/background.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,12 +104,21 @@
       <option name="project" value="LOCAL" />
       <updated>1700791604657</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Collisions Working">
+      <option name="closed" value="true" />
+      <created>1700947893753</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1700947893755</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Edited TerrainGen" />
     <MESSAGE value="Finished Perlin terrain generation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished Perlin terrain generation" />
+    <MESSAGE value="Collisions Working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Collisions Working" />
   </component>
 </project>

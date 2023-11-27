@@ -16,6 +16,9 @@ public class GameApp extends JPanel implements KeyListener, ActionListener {
     boolean rightPressed;
     public int dir;
 
+    public int left;
+    public int right;
+
     TerrainGen Map;
     Player Player;
     public ImageIcon backIcon = new ImageIcon(this.getClass().getResource("/images/background.png"));
@@ -55,107 +58,71 @@ public class GameApp extends JPanel implements KeyListener, ActionListener {
     }
 
     public void update(){
-        Block[][] World = Map.getBlockMap();
-        if(leftPressed){
-            camdX -= 5;
+        if(leftPressed){    //move camera left
+            camdX = -5;
             dir = 1;
-        } if(rightPressed){
-            camdX += 5;
+        } if(rightPressed){ //move camera right
+            camdX = 5;
             dir = 0;
         }
-        camX += camdX;
         camdX = (int)(0.9*camdX);
-        for(int i = 0; i<Map.getWidth();i++){
-            for(int j = 0; j<Map.getHeight(); j++){
-                World[i][j].update(camX,camY);
-            }
-        }
-        for(int i = 0; i< World.length; i++) {
-            for (int j = 0; j < Map.getHeight(); j++) {
-                if(World[i][j].getx()>(camX-100)&&World[i][j].getx()<camX+1750) {
-                    if(!World[i][j].getId().equals("AIR")) {
-                        checkCollisionX(World[i][j]);
-                    }
-                }
-            }
-        }
-        if(upPressed){
-            camdY -= 5;
-        } if(downPressed){
-            camdY += 5;
-        }
+        camdY += 1;
+        camX += camdX;
         camY += camdY;
-        camdY = (int)(camdY*0.9);
+
+        Block[][] World = Map.getBlockMap(); //save copy of the terrain
+        checkcollision();
+
+        left = camX/50;
+        right = left+36;
+
         for(int i = 0; i<Map.getWidth();i++){
             for(int j = 0; j<Map.getHeight(); j++){
                 World[i][j].update(camX,camY);
             }
         }
-        for(int i = 0; i< World.length; i++) {
-            for (int j = 0; j < Map.getHeight(); j++) {if(World[i][j].getx()>(camX-100)&&World[i][j].getx()<camX+1750) {
-                    if(!World[i][j].getId().equals("AIR")) {
-                        checkCollisionY(World[i][j]);
-                    }
-                }
-            }
-        }
+
         repaint();
     }
 
-    //I feel like the checkCollision methods should be in a different class...
-    //Ideally the player should be what's checking the collisions with terrain, but since the
-    //terrain is moving and not the player, the terrain check collisions with the player.
-    //For enemies and other objects, they would check collisions with the terrain since the
-    //terrain does not move around them.
-    public void checkCollisionX(Block block){
-        //we need the boundries around the player
-        int playerLeft = Player.getX();
-        int playerRight = playerLeft+50;
-        int playerUp = Player.getY();
-        int playerDown = playerUp + 50;
-        //we also need the boundies of the block
-        int blockLeft = block.getX();
-        int blockRight = blockLeft + 50;
-        int blockUp = block.getY();
-        int blockDown = blockUp + 50;
-        //two if statements: 1 if the player is on the same horizontal level as the block.
-        //2 if the player is inside the block
-        if(((playerDown>=blockUp)&&(playerDown<=blockDown))||((playerUp<=blockDown)&&(playerUp>=blockUp))){
-            if(playerLeft<blockRight&&playerRight>blockRight){
-                camX = block.getx()-800;
-                camdX = 0;
-            } if(playerRight>blockLeft&&playerLeft<blockLeft){
-                camX = block.getx()-910;
-                camdX = 0;
+    public void checkcollision(){
+        Block[][] World = Map.getBlockMap();
+        int xLeft = Player.getX();
+        int xRight = xLeft+50;
+        int yTop = Player.getY();
+        int yBottom = yTop + 50;
+
+        for(int i = left; i<right; i++){
+            for(int j = 0; j<Map.getHeight(); j++){
+                int x = World[i][j].getX();
+                int y = World[i][j].getY();
+                int xR = x+World[i][j].getSize();
+                int yB = y+World[i][j].getSize();
+
+                if(!World[i][j].getId().equals("AIR")){
+                    if((yBottom+camdY>=y)&&(yBottom+camdY<=yB)&&(xRight>=x)&&(xLeft<=xR)){
+                        if(upPressed){
+                            camY += 1;
+                            camdY -=15;
+                        } else{
+                            camY = camY - (camdY+0);
+                            camdY = 0;
+                        }
+                    } else if((yTop>=yB)&&(yTop<=y)&&(xRight>=x)&&(xLeft<=xR)){
+                        camY = camY - camdY;
+                        camdY = 0;
+                    }
+                    if((xRight+camdX>=x)&&(xRight+camdX<=xR)&&(yBottom>=y)&&(yTop<=yB)){
+                        camX = camX-camdX;
+                        camdX = 0;
+                    } else if((xLeft+camdX>=x)&&(xLeft+camdX<=xR)&&(yBottom>=y)&&(yTop<=yB)){
+                        camX = camX-camdX;
+                        camdX = 0;
+                    }
+                }
             }
         }
-        //System.out.println("miss");
     }
-
-    public void checkCollisionY(Block block){
-        int playerLeft = Player.getX();
-        int playerRight = playerLeft+50;
-        int playerUp = Player.getY();
-        int playerDown = playerUp + 50;
-        //we also need the boundies of the block
-        int blockLeft = block.getX();
-        int blockRight = blockLeft + 50;
-        int blockUp = block.getY();
-        int blockDown = blockUp + 50;
-        //two if statements: 1 if the player is on the same horizontal level as the block.
-        //2 if the player is inside the block
-        if(((playerLeft<=blockRight)&&(playerLeft>=blockLeft))||((playerRight>=blockLeft)&&(playerRight<=blockRight))){
-            if(playerDown>blockUp&&playerUp<blockUp){
-                camY -= camdY;
-                camY = block.gety()-610;
-                camdY = 0;
-//                if(upPressed){
-//                    camdY = -15;
-//                }
-            } 
-        }
-    }
-
 
 
     public void paintComponent(Graphics g){
@@ -174,11 +141,9 @@ public class GameApp extends JPanel implements KeyListener, ActionListener {
         }
         //paints the terrain
         Block[][] world = Map.getBlockMap();
-        for(int i = 0; i< world.length; i++) {
+        for(int i = left; i< right; i++) {
             for (int j = 0; j < Map.getHeight(); j++) {
-                if(world[i][j].getx()>(camX-100)&&world[i][j].getx()<camX+1750) {
-                    world[i][j].paint(g);
-                }
+                world[i][j].paint(g);
             }
         }
     }
