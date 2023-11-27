@@ -31,9 +31,8 @@ This terrain generation is customizable as well. A simple adjustment in the perl
 
 ## Future Plans
 I have several planned features that I will be working on to advance the capabilities of this engine, including but not limited to:
-  1. Improved collision detection with hitboxes
-  2. An entity class that generates autonomously controlled creatures and ememies. Entities will be customizable. 
-  3. Health bars for entities
-  4. Biomes
+  1. An entity class that generates autonomously controlled creatures and ememies. Entities will be customizable. 
+  2. Health bars for entities
+  3. Biomes
 
 
